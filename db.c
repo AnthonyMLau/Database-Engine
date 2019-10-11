@@ -3,6 +3,13 @@
 #include <stdlib.h>
 #include <string.h>
 
+// REPL loop prompt
+// read_input() reads input and stores input in InputBuffer
+  // InputBuffer stores the input string and input_length
+// Meta commands (inputs) are then handled - any commands that start with "."
+  // Meta commands are stored as an enum
+// Normals commands (inputs) are then handled - SQL commands
+
 typedef struct {
     char* buffer;
     size_t buffer_length;
