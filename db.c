@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#define COLUMN_USERNAME_SIZE 32
+#define COLUMN_EMAIL_SIZE 255
 
 // REPL loop prompt
 // read_input() reads input and stores input in InputBuffer
@@ -10,6 +12,11 @@
   // Meta commands are stored as an enum
 // Normals commands (inputs) are then handled - SQL commands
 
+typedef struct{
+    uint32_t id;
+    char username[COLUMN_USERNAME_SIZE];
+    char email[COLUMN_EMAIL_SIZE];
+}Row
 typedef struct {
     char* buffer;
     size_t buffer_length;
@@ -40,6 +47,7 @@ typedef enum { STATEMENT_INSERT, STATEMENT_SELECT } StatementType;
 
 typedef struct {
     StatementType type;
+    Row row_to_insert; //only used by the insert command/statement
 } Statement;
 
 MetaCommandResult do_meta_command(InputBuffer* input_buffer){
