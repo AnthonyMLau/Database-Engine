@@ -5,12 +5,7 @@
 #define COLUMN_USERNAME_SIZE 32
 #define COLUMN_EMAIL_SIZE 255
 
-// REPL loop prompt
-// read_input() reads input and stores input in InputBuffer
-  // InputBuffer stores the input string and input_length
-// Meta commands (inputs) are then handled - any commands that start with "."
-  // Meta commands are stored as an enum
-// Normals commands (inputs) are then handled - SQL commands
+
 
 typedef struct{
     uint32_t id;
@@ -113,6 +108,13 @@ void close_input_buffer(InputBuffer* input_buffer) {
     free(input_buffer->buffer);
     free(input_buffer);
 }
+
+// REPL loop prompt
+// read_input() reads input and stores input in InputBuffer
+  // InputBuffer stores the input string and input_length
+// Meta commands (inputs) are then handled - any commands that start with "."
+  // Meta commands are stored as an enum
+// Normals commands (inputs) are then handled - SQL commands
 
 int main(int argc, char* argv[]) {
     InputBuffer* input_buffer = new_input_buffer();
