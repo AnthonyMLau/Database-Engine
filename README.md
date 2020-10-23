@@ -1,5 +1,5 @@
 # Database-Engine
-This is my database engine written from scratch in C. It is a self-contained, serverless, transactional SQL database engine.
+This is my database engine (in progress) written from scratch in C. It is a self-contained, serverless, transactional SQL database engine.
 
 It is based heavily on Sqlite, supports basic SQL queries, and  saves everything locally to disk rather than having a sepearte server process.
 
